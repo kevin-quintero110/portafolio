@@ -1,0 +1,104 @@
+---
+
+import Layout from '../layouts/Layout.astro';
+import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import GithubIcon from '../components/icons/Github.astro';
+import WhatsAppIcon from '../components/icons/WhatsAppIcon.astro';
+import SocialPill from '../components/SocialPill.astro';
+import Experiencia from '../components/Experiencia.astro';
+import Proyectos from '../components/Proyectos.astro';
+import SectionContainer from '../components/SectionContainer.astro'
+import BriefcaseIcon from '../components/icons/BriefcaseIcon.astro';
+import CodeIcon from '../components/icons/Code.astro';
+---
+
+<Layout title="Portafolio de Kevin Ilmer Quintero Mondragon - Desarrollador y programador web" 
+
+description="Contrata a kevin ilmer quintero mondragon para crear tu aplicacion web o movil.
+Desarrollador de software. Especializado en crear aplicaciones y soluciones unicas."
+>
+	<main>
+		<SectionContainer  class="py-44 pb-24">
+
+			
+			<h1 class="text-white text-5xl font-bold flex flex-wrap items-center gap-x-4 pb-10">
+				<span class="span1">Soy </span><span class="typing inline-block">Kevin Quintero</span>
+			</h1>
+			<h2 class="text-2xl opacity-80 text-wrap">
+				 +2 años de experiencia en el <span class="text-yellow-200/90"> Desarollo De Software.</span> De <span class="text-blue-300">Cali, Colombia.</span> Especializado en Desarrollar Soluciones Tecnologicas de <span class="text-blue-300"> Escritorio y Web.</span>
+			</h2>
+      <h4> <span class="text-blue-200/90">QA Engineer </span>| <span class="text-gray-200/90"> Software Developer</span> | <span class="text-blue-200/90"> Data & Automation</span> </h4>
+		<nav class="flex gap-x-4 mt-8">
+      <SocialPill class="flex gap-x-2" href="https://www.linkedin.com/in/kevin-ilmer-quintero-mondragon-81b765259/">
+        <LinkedInIcon class="size-6"/>
+        Linkedin
+      </SocialPill>
+      <SocialPill class="flex gap-x-2" href="https://github.com/kevin-quintero110">
+        <GithubIcon class="size-6"/>
+        GitHub
+      </SocialPill>
+       <SocialPill class="flex gap-x-2" href="https://wa.me/qr/3ILVDVMANSQEI1" alt="3155487003">
+        <WhatsAppIcon class="size-6"/>
+        WhatApp
+      </SocialPill> 
+
+    </nav>
+		</SectionContainer>
+    <SectionContainer id="experiencia" >
+      <h2 class="text-3xl font-bold mb-6 flex gap-x-2"><BriefcaseIcon class="size-7" /> Experiencia laboral 
+        
+      </h2>
+      <Experiencia />
+    </SectionContainer>
+
+     <SectionContainer id="proyectos" >
+      <h2 class="text-3xl font-bold mb-6 flex gap-x-2"><CodeIcon class="size-7" /> Proyectos 
+      </h2>
+      <Proyectos />
+    </SectionContainer>
+    <SectionContainer id="info" >
+      <h2 class="text-3xl font-bold mb-6 flex gap-x-2"><CodeIcon class="size-7" /> mas informacion 
+      </h2>
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ipsa ipsam harum delectus, quidem rem, repellendus sit nihil nemo nam voluptates sapiente. Reiciendis minima assumenda, non laboriosam culpa blanditiis ex.</p>
+    </SectionContainer>
+    
+	</main>
+</Layout>
+
+<style>
+  .typing {
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid rgba(255, 255, 255, 0.95);
+    animation: typing 8s steps(18, end) infinite, blink 0.7s step-end infinite;
+  }
+  .span1{
+    color: rgb(90, 20, 201);
+  }
+
+  @keyframes typing {
+    0%, 10% {
+      width: 0;
+    }
+    50% {
+      width: 18ch;
+    }
+    60% {
+      width: 18ch;
+    }
+    100% {
+      width: 0;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+    100% {
+      border-color: rgba(255, 255, 255, 0.95);
+    }
+  }
+</style>

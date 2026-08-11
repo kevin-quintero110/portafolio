@@ -1,0 +1,37 @@
+---
+import Badge from '../components/Badge.astro';
+---
+<header class="flex flex-col md:flex-row justify-between items-center  w-full xl:w-[1120px] mx-auto gap-4 px-5">
+  <a target="_blank" href="https://www.linkedin.com/in/kevin-ilmer-quintero-mondragon-81b765259/">
+    <img
+      class="rounded-full size-10 sm:w-20 sm:h-20 md:w-20 md:h-20 object-cover"
+      src="https://media.licdn.com/dms/image/v2/D4E03AQEIoqShKN3nVw/profile-displayphoto-shrink_200_200/B4EZc9bXq6GcAY-/0/1749082274885?e=1786579200&v=beta&t=gXgxBw0C8mKWbH5ZeJtvxZbLN8CH0MVhLBoL7P2O5vc"
+      alt="kevin-quintero110 foto"
+    >
+  </a>
+
+  <nav class="header-nav flex flex-wrap justify-center items-center gap-4 px-6 py-3">
+    <Badge></Badge>
+    <a class="header-link" href="#top">Inicio</a>
+    <a class="header-link" href="#experiencia">Experiencia</a>
+    <a class="header-link" href="#proyectos">Proyectos</a>
+    <a class="header-link" href="#info">Acerca de</a>
+  </nav>
+</header>
+
+<style>
+
+
+  .header-link {
+    color: #f4f3f5;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-bottom: 5px solid rgba(55, 5, 95, 0.911);
+    transition:  border 200ms ease;
+  }
+
+  .header-link:hover {
+    color: #fffefeb0;
+    border-bottom: 1px solid rgba(252, 249, 249, 0.699);
+  }
+</style>

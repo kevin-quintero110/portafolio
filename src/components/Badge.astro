@@ -1,0 +1,73 @@
+---
+---
+
+<span class="badge">
+  <span class="dino" aria-hidden="true">
+    <svg viewBox="13.848000000000003 0 283.6449999999999 305.4" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Google dinosaurio">
+      <g fill="none" fill-rule="evenodd">
+        <path d="M269.352 91.664h-42.436V80.04h70.577v-65.73h-14.294V0H168.4v14.309h-13.848v91.664H140.26v13.861h-20.994v14.309H98.271v14.308H83.977v13.862H58.069v-14.309H44.222v-13.861H29.928v-28.17h-16.08v86.746h13.847v14.308h14.293v13.862h13.848v14.308H70.13v13.862h13.847v56.34h30.375V289.3h-13.848V277.23h13.848v-13.862h14.294V249.06h11.613v14.308h14.294V305.4h30.375V289.3h-14.294v-54.104h14.294V220.89h13.847v-21.016h14.294v-49.186h11.614v13.862h16.527v-30.406h-28.14v-25.934h56.282z" fill="#fff"/>
+        <path d="M182.248 20.569h16.974V37.56h-16.974z" fill="#fff"/>
+      </g>
+    </svg>
+  </span>
+</span>
+
+<style>
+ /* HTML: <span class="badge"></span> */
+.badge {
+  width: 120px;
+  height: 72px;
+  border-bottom: 2px solid #ec1b1b00;
+  margin-bottom: 15px;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: transparent;
+}
+.badge::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: transparent;
+}
+.badge::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(70,32,83,0.2) 20%, #462053 45%, #462053 55%, rgba(70,32,83,0.2) 80%, transparent 100%);
+  background-size: 120px 100%;
+  animation: l3-0 .9s linear infinite;
+}
+.badge::after {
+  display: none !important;
+  content: none !important;
+}
+.dino {
+  position: absolute;
+  left: 50%;
+  bottom: 3px;
+  transform: translateX(-50%) translateY(0);
+  animation: dino-bounce .9s ease-in-out infinite;
+}
+.dino svg {
+  display: block;
+  width: 32px;
+  height: auto;
+}
+@keyframes l3-0 {
+  0% {background-position: 0 0;}
+  100% {background-position: -120px 0;}
+}
+@keyframes dino-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+</style>

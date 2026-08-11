@@ -1,0 +1,95 @@
+---
+import GithubIcon from './icons/Github.astro';
+import TechIcon from './icons/TechIcon.astro';
+import ApptvImage from './imagenes/Apptv.png';
+import Series from './imagenes/Series.png';
+import LadingPage from './imagenes/LadingPage.png';
+
+const getImageSrc = (image) =>
+  typeof image === 'string' ? image : image?.src ?? image;
+
+const PROJECTS = [
+  
+  {
+    title: 'Desafio css Landing Page',
+    description: 'desafio que realice en mis inicios como estudiante 2023 construido y hecho en HTML, CSS y Javascript puro codigo vanilla',
+    link: 'https://kevin-quintero110.github.io/Desafio_css_-LandingPage/',
+    github: 'https://github.com/kevin-quintero110/Desafio_css_-LandingPage',
+    image: LadingPage,
+    tags: [ 'CSS','javascript','HTML']
+  },
+  {
+    title: 'App tv Clinica Colombia',
+    description: 'Un sitio web para usar en los televisores de las salas de espera de la clinica, para brindar informacion al usuario',
+    link: 'https://kevin-quintero110.github.io/AppTvClinicaColombia/',
+    github: 'https://github.com/kevin-quintero110/AppTvClinicaColombia',
+    image: ApptvImage,
+    tags: ['Astro', 'React']
+  },
+  {
+    title: 'Programa de ejercicios con series numericas',
+    description: 'Programa para realizar ejercicios con series de numeros',
+    link: 'https://kevin-quintero110.github.io/buscar-numero-serie-loteria/',
+    github: 'https://github.com/kevin-quintero110/buscar-numero-serie-loteria',
+    image: Series,
+    tags: [ 'React']
+  }
+];
+---
+
+<div class="grid gap-8 grid-cols-1 md:grid-cols-2">
+  {PROJECTS.map((project) => (
+    <article class="w-full max-w-full overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950/80 shadow-[0_30px_80px_-45px_rgba(15,23,42,0.9)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_35px_90px_-40px_rgba(15,23,42,0.85)]">
+      <a href={project.link ?? '#'} target="_blank" rel="noreferrer" class="block overflow-hidden">
+        <img
+          class="h-52 w-full object-cover transition duration-500 hover:scale-105"
+          src={getImageSrc(project.image)}
+          alt={project.title}
+        />
+      </a>
+
+      <div class="space-y-5 p-6 bg-gradient-to-b from-slate-950/90 to-slate-900/95 backdrop-blur-sm">
+        <div class="space-y-3">
+          <a href={project.link ?? '#'} target="_blank" rel="noreferrer" class="block">
+            <h3 class="text-2xl font-semibold tracking-tight text-yellow-200/90">{project.title}</h3>
+          </a>
+          <p class="text-sm leading-6 text-slate-300">{project.description}</p>
+        </div>
+
+        {project.tags?.length ? (
+          <div class="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-200 backdrop-blur-sm">
+                <TechIcon name={tag} class="size-8 text-amber-400 " />
+                {tag}
+              </span>
+            ))}
+          </div>
+        ) : null}
+
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <a
+            href={project.link ?? '#'}
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center justify-center rounded-2xl border border-transparent bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition duration-200 hover:-translate-y-0.5 hover:bg-slate-100"
+          >
+            Ver proyecto
+          </a>
+
+          {project.github ? (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-200 transition duration-200 hover:border-white/20 hover:bg-white/10"
+            >
+              <GithubIcon class="w-4 h-4 text-current" />
+              GitHub
+            </a>
+          ) : null}
+        </div>
+      </div>
+    </article>
+  ))}
+</div>

@@ -1,0 +1,84 @@
+---
+import "@fontsource-variable/onest"
+import Header from '../components/Header.astro';
+import '../styles/global.css';
+
+interface Props{
+	title: string
+	description: string
+}
+
+const { description, title } = Astro.props
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="desceiption" content={description}>
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<title>{title}</title>
+	</head>
+	<body id="top">
+		<div class="fixed inset-0 -z-10 items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+		<Header />
+		<slot />
+
+		<a href="#top" class="scroll-top-button" aria-label="Volver al inicio">↑</a>
+	</body>
+</html>
+
+<style>
+
+
+	:root{
+		color-scheme: light dark ;
+	}
+	html{
+		font-family: 'Onest Variable', sans-serif;
+		scroll-behavior: smooth;
+	}
+	body {
+		background-color: #050505;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	@media (prefers-reduced-motion: reduce){
+		html{
+			scroll-behavior: auto;
+		}
+	}
+
+	.scroll-top-button {
+		position: fixed;
+		bottom: 1.5rem;
+		right: 1.5rem;
+		width: 3rem;
+		height: 3rem;
+		background: rgba(255,255,255,0.1);
+		backdrop-filter: blur(10px);
+		border: 1px solid rgba(255,255,255,0.15);
+		border-radius: 9999px;
+		color: #ffffff;
+		display: grid;
+		place-items: center;
+		font-size: 1.25rem;
+		text-decoration: none;
+		box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+		transition: transform 200ms ease, background 200ms ease;
+		z-index: 50;
+	}
+
+	.scroll-top-button:hover {
+		transform: translateY(-2px);
+		background: rgba(255,255,255,0.18);
+	}
+
+	.scroll-top-button:focus-visible {
+		outline: 2px solid #8b5cf6;
+		outline-offset: 4px;
+	}
+</style>
