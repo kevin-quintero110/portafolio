@@ -1,37 +1,63 @@
 ---
-import Badge from '../components/Badge.astro';
----
-<header class="flex flex-col md:flex-row justify-between items-center  w-full xl:w-[1120px] mx-auto gap-4 px-5">
-  <a target="_blank" href="https://www.linkedin.com/in/kevin-ilmer-quintero-mondragon-81b765259/">
-    <img
-      class="rounded-full size-10 sm:w-20 sm:h-20 md:w-20 md:h-20 object-cover"
-      src="https://media.licdn.com/dms/image/v2/D4E03AQEIoqShKN3nVw/profile-displayphoto-shrink_200_200/B4EZc9bXq6GcAY-/0/1749082274885?e=1786579200&v=beta&t=gXgxBw0C8mKWbH5ZeJtvxZbLN8CH0MVhLBoL7P2O5vc"
-      alt="kevin-quintero110 foto"
-    >
-  </a>
 
-  <nav class="header-nav flex flex-wrap justify-center items-center gap-4 px-6 py-3">
-    <Badge></Badge>
-    <a class="header-link" href="#top">Inicio</a>
-    <a class="header-link" href="#experiencia">Experiencia</a>
-    <a class="header-link" href="#proyectos">Proyectos</a>
-    <a class="header-link" href="#info">My skills</a>
-  </nav>
+
+
+
+---
+
+<header class="fixed top-0 left-0 right-0 z-1 flex flex-col md:flex-row justify-between items-center w-full gap-1 px-2 py-1 backdrop-blur-md">
+  <div class="flex items-center justify-between w-full max-w-7xl mx-auto">
+    
+    <nav class="header-nav flex flex-wrap justify-center items-center gap-8 px-1 py-2">
+      
+      <a class="header-link" href="#top">Inicio</a>
+      <a class="header-link" href="#experiencia">Experiencia</a>
+      <a class="header-link" href="#proyectos">Proyectos</a>
+      <a class="header-link" href="#info">acerca de mi</a>
+    </nav>
+
+    
+  </div>
 </header>
 
+<!-- Spacer para que el contenido no quede debajo del header -->
+<div class="h-20 md:h-24"></div>
+
 <style>
-
-
+ 
   .header-link {
     color: #f4f3f5;
     text-decoration: none;
     padding: 0.25rem 0.5rem;
-    border-bottom: 5px solid rgba(55, 5, 95, 0.911);
-    transition:  border 200ms ease;
+    border-bottom: 2px solid transparent;
+    transition: all 200ms ease;
+    font-size: 0.9rem;
+    font-weight: 500;
   }
 
   .header-link:hover {
-    color: #fffefeb0;
-    border-bottom: 1px solid rgba(252, 249, 249, 0.699);
+    color: #bc9ac7;
+    border-bottom: 2px solid #24032e;;
+  }
+
+  .header-link:active {
+    color: #e3d0e9;
+  }
+
+  /* Ajuste para móviles */
+  @media (max-width: 768px) {
+    .header-link {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.3rem;
+    }
+
+    nav {
+      gap: 0.25rem !important;
+      padding: 0.25rem 0.5rem !important;
+    }
+
+    header {
+      padding: 0.75rem 1rem;
+    }
   }
 </style>

@@ -4,13 +4,28 @@ import TechIcon from './icons/TechIcon.astro';
 import ApptvImage from './imagenes/Apptv.png';
 import Series from './imagenes/Series.png';
 import LadingPage from './imagenes/LadingPage.png';
-
+import crm from './imagenes/crm.png';
+import ecommerce from './imagenes/ecommerce.png';
 const getImageSrc = (image) =>
   typeof image === 'string' ? image : image?.src ?? image;
 
 const PROJECTS = [
   
   {
+    title: 'CRM - Administrador de Clientes APP WEB FullStack',
+    description: "desplegado CREDENCIALES DE PRUEBA -  CORREO: user@gmail.com - CLAVE: user",
+    link: 'https://kevin-quintero110.github.io/crm_frontend',
+    github: 'https://github.com/kevin-quintero110/crm_backend',
+    image: crm,
+    tags: [ 'react','node','express','postgresql']
+  }, {
+    title: 'E-commerce APP WEB FullStack',
+    description: "e-commerce completo, con panel de administracion y proceso de facturacion",
+    link: 'https://github.com/kevin-quintero110/MoradasyStore/blob/main/README.md',
+    github: 'https://github.com/kevin-quintero110/MoradasyStore',
+    image: ecommerce,
+    tags: [ 'react','node','express','mongo']
+  },{
     title: 'Desafio css Landing Page',
     description: 'desafio que realice en mis inicios como estudiante 2023 construido y hecho en HTML, CSS y Javascript puro codigo vanilla',
     link: 'https://kevin-quintero110.github.io/Desafio_css_-LandingPage/',

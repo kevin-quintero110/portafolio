@@ -1,1 +1,11 @@
 @import "tailwindcss";
+/* Ajuste para todos los elementos con id */
+[id] {
+  scroll-margin-top: 80px;
+}
+
+@media (min-width: 768px) {
+  [id] {
+    scroll-margin-top: 96px;
+  }
+}

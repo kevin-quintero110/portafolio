@@ -1,5 +1,4 @@
 ---
-
 import Layout from '../layouts/Layout.astro';
 import LinkedInIcon from '../components/icons/LinkedIn.astro';
 import GithubIcon from '../components/icons/Github.astro';
@@ -11,95 +10,127 @@ import SectionContainer from '../components/SectionContainer.astro'
 import BriefcaseIcon from '../components/icons/BriefcaseIcon.astro';
 import CodeIcon from '../components/icons/Code.astro';
 import Skills from '../components/Skills.astro';
+
+import mifoto from '../components/imagenes/mifoto.png';
+import Badge from '../components/Badge.astro';
+
+const getImageSrc = (image) =>
+  typeof image === 'string' ? image : image?.src ?? image;
 ---
 
 <Layout title="Portafolio de Kevin Ilmer Quintero Mondragon - Desarrollador y programador web" 
-
 description="Contrata a kevin ilmer quintero mondragon para crear tu aplicacion web o movil.
 Desarrollador de software. Especializado en crear aplicaciones y soluciones unicas."
 >
 	<main>
-		<SectionContainer  class="py-44 pb-24">
-
+		<SectionContainer class="py-15 pb-24 flex flex-col items-center text-center">
 			
-			<h1 class="text-white text-5xl font-bold flex flex-wrap items-center gap-x-4 pb-10">
-				<span class="span1">Soy </span><span class="typing inline-block">Kevin Quintero</span>
+			<!-- Imagen centrada -->
+			<a 
+				target="_blank" 
+				href="https://www.linkedin.com/in/kevin-ilmer-quintero-mondragon-81b765259/"
+				class="relative group mb-6 inline-block"
+			>
+				<div class="absolute -inset-4 bg-gradient-to-r from-yellow-400/20 to-purple-500/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+				<img
+					class="relative size-32 sm:size-40 md:size-48 object-cover rounded-full border-4 border-yellow-400/30 hover:border-yellow-400 transition-all duration-300 hover:scale-105 shadow-2xl shadow-yellow-400/10 imgkey"
+					src={getImageSrc(mifoto)}
+					alt="kevin-quintero110 foto"
+				/>
+			</a>
+
+			<!-- Título principal -->
+			<h1 class="text-white text-4xl sm:text-5xl md:text-6xl font-bold flex flex-wrap items-center justify-center gap-x-4 pb-6">
+				<span class="span1">Soy</span>
+				<span class=" inline-block">Kevin Quintero</span>
 			</h1>
-			<h2 class="text-2xl opacity-80 text-wrap">
-				 +2 años de experiencia en el <span class="text-yellow-200/90"> Desarollo De Software.</span> De <span class="text-blue-300">Cali, Colombia.</span> Especializado en Desarrollar Soluciones Tecnologicas de <span class="text-blue-300"> Escritorio y Web.</span>
+
+			<!-- Descripción -->
+			<h2 class="text-lg sm:text-xl md:text-2xl opacity-80 max-w-3xl mx-auto">
+				+2 años de experiencia en el <span class="text-yellow-200/90">Desarrollo De Software.</span> De <span class="text-blue-300">Cali, Colombia.</span> Especializado en Desarrollar <span class="text-blue-300">Soluciones Tecnológicas</span>
 			</h2>
-      <h4> <span class="text-blue-200/90">QA Engineer </span>| <span class="text-gray-200/90"> Software Developer</span> | <span class="text-blue-200/90"> Data & Automation</span> </h4>
-		<nav class="flex gap-x-4 mt-8">
-      <SocialPill class="flex gap-x-2" href="https://www.linkedin.com/in/kevin-ilmer-quintero-mondragon-81b765259/">
-        <LinkedInIcon class="size-6"/>
-        Linkedin
-      </SocialPill>
-      <SocialPill class="flex gap-x-2" href="https://github.com/kevin-quintero110">
-        <GithubIcon class="size-6"/>
-        GitHub
-      </SocialPill>
-       <SocialPill class="flex gap-x-2" href="https://wa.me/qr/3ILVDVMANSQEI1" alt="3155487003">
-        <WhatsAppIcon class="size-6"/>
-        WhatApp
-      </SocialPill> 
 
-    </nav>
+			<!-- Etiquetas -->
+			<h4 class="text-base sm:text-lg mt-3 flex flex-wrap justify-center gap-x-3 gap-y-1">
+				<span class="text-blue-200/90">QA Engineer</span>
+				<span class="text-gray-400">|</span>
+				<span class="text-gray-200/90">Software Developer</span>
+				<span class="text-gray-400">|</span>
+				<span class="text-blue-200/90">Data & Automation</span>
+			</h4>
+
+			<!-- Redes sociales -->
+
+
+			<nav class="flex flex-wrap justify-center gap-3 sm:gap-4 mt-8">
+        <Badge />
+				<SocialPill class="flex gap-x-2" href="https://www.linkedin.com/in/kevin-ilmer-quintero-mondragon-81b765259/">
+					<LinkedInIcon class="size-5 sm:size-6"/>
+					LinkedIn
+				</SocialPill>
+				<SocialPill class="flex gap-x-2" href="https://github.com/kevin-quintero110">
+					<GithubIcon class="size-5 sm:size-6"/>
+					GitHub
+				</SocialPill>
+				<SocialPill class="flex gap-x-2" href="https://wa.me/qr/3ILVDVMANSQEI1" alt="3155487003">
+					<WhatsAppIcon class="size-5 sm:size-6"/>
+					WhatsApp
+				</SocialPill> 
+			</nav>
+
 		</SectionContainer>
-    <SectionContainer id="experiencia" >
-      <h2 class="text-3xl font-bold mb-6 flex gap-x-2"><BriefcaseIcon class="size-7" /> Experiencia laboral 
-        
-      </h2>
-      <Experiencia />
-    </SectionContainer>
 
-     <SectionContainer id="proyectos" >
-      <h2 class="text-3xl font-bold mb-6 flex gap-x-2"><CodeIcon class="size-7" /> Proyectos 
-      </h2>
-      <Proyectos />
-    </SectionContainer>
-    <SectionContainer id="info" >
-      <h2 class="text-3xl font-bold mb-2 flex gap-x-2 mt-5"><CodeIcon class="size-7" />  My skills
-      </h2>
-     <Skills />
-    </SectionContainer>
-    
+		<SectionContainer id="experiencia">
+			<h2 class="text-3xl font-bold mb-6 flex gap-x-2"><BriefcaseIcon class="size-7" /> Experiencia laboral</h2>
+			<Experiencia />
+		</SectionContainer>
+
+		<SectionContainer id="proyectos">
+			<h2 class="text-3xl font-bold mb-6 flex gap-x-2 scroll-mb-2"><CodeIcon class="size-7" /> Proyectos</h2>
+			<Proyectos />
+		</SectionContainer>
+
+		<SectionContainer id="info">
+			<h2 class="text-3xl font-bold mb-2 flex gap-x-2 mt-5">Acerca de mi</h2>
+			<Skills />
+		</SectionContainer>
 	</main>
 </Layout>
 
 <style>
-  .typing {
-    display: inline-block;
-    width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 4px solid rgba(255, 255, 255, 0.95);
-    animation: typing 8s steps(18, end) infinite, blink 0.7s step-end infinite;
-  }
-  .span1{
-    color: rgb(90, 20, 201);
-  }
+	
 
-  @keyframes typing {
-    0%, 10% {
-      width: 0;
-    }
-    50% {
-      width: 18ch;
-    }
-    60% {
-      width: 18ch;
-    }
-    100% {
-      width: 0;
-    }
-  }
+	.span1 {
+		color: rgb(90, 20, 201);
+	}
 
-  @keyframes blink {
-    50% {
-      border-color: transparent;
-    }
-    100% {
-      border-color: rgba(255, 255, 255, 0.95);
-    }
-  }
+	@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.imgkey {
+  animation: pulse 1200ms ease-out infinite forwards;
+}
+
+	@keyframes blink {
+		50% {
+			border-color: transparent;
+		}
+		100% {
+			border-color: rgba(255, 255, 255, 0.95);
+		}
+	}
+
+	/* Ajuste extra para pantallas muy pequeñas */
+	@media (max-width: 480px) {
+		.typing {
+			font-size: 2.2rem;
+			border-right-width: 3px;
+		}
+
+		.span1 {
+			font-size: 2.2rem;
+		}
+	}
 </style>
